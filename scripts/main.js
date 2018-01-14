@@ -55,3 +55,41 @@ function processImage() {
             alert(errorString);
         });
     };
+
+function getList(){
+    function populateList(data){
+        var list = JSON.parse(data);
+        for(var i = 0 ; i < list.length; i++){
+            document.getElementById("item" + i).innerHTML = list[i].name;
+        }
+    }
+var xhr = new XMLHttpRequest();
+    xhr.open("GET","https://2018nwhacks.azurewebsites.net/games/0/items");
+
+    xhr.onload = function() {
+            if(this.status === 200){
+                populateList(xhr.responseText);
+            }
+    };
+    xhr.send();
+}
+
+function submitImg(category){
+    function populateList(data){
+        var list = JSON.parse(data);
+        for(var i = 0 ; i < list.length; i++){
+            document.getElementById("item" + i).innerHTML = list[i].name;
+        }
+    }
+var xhr = new XMLHttpRequest();
+    xhr.open("GET","https://2018nwhacks.azurewebsites.net/games/0/items");
+
+    xhr.onload = function() {
+            if(this.status === 200){
+                populateList(xhr.responseText);
+            }
+    };
+    xhr.send();    
+}
+
+getList();
