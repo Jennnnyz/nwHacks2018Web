@@ -24,7 +24,8 @@ function processImage() {
         };
 
         // Display the image.
-        var sourceImageUrl = document.getElementById("myImage").src;
+        var sourceImageUrl = document.getElementById("imgInput").value;
+        document.getElementById("myImage").src = sourceImageUrl;
 
         // Perform the REST API call.
         $.ajax({

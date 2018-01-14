@@ -6,10 +6,17 @@
 	<link href="styles/main.css" rel="stylesheet" type="text/css" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="scripts/main.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 <body>
-	<img id="myImage" src="https://www.petmd.com/sites/default/files/what-does-it-mean-when-cat-wags-tail.jpg"/>
-	<button onclick="processImage()">Submit</button>
+	<h1>What is this?</h1>
+	<h2>Please input your link below:</h2>
+	<form id="form" action="">
+		<input type="text" name="imgInput" id="imgInput">
+		<input type="button" onclick="processImage()" value="Submit">
+	</form>
+
+	<img id="myImage" src=""/>
     <textarea id="myText" class="UIInput" style="width:580px; height:400px;"></textarea>
 </body>
 </html>
