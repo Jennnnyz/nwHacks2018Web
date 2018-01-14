@@ -12,14 +12,9 @@ body {
     padding-bottom: 10rem;
 }
 
-/* td {
-    margin-left: 16px;
-} */
-
-/* tbody {
-    margin-top: 8px;
-    margin-bottom: 8px;
-} */
+#card-title {
+    margin-bottom: 24px;
+}
 
 .itemList {
     margin-bottom: 72px;

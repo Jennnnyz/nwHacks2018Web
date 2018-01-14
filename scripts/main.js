@@ -1,3 +1,5 @@
+var list = [];
+
 function processImage() {
         // **********************************************
         // *** Update or verify the following values. ***
@@ -45,14 +47,23 @@ function processImage() {
 
         .done(function(data) {
             // Show formatted JSON on webpage.
+			document.getElementById("result").style.display = "block";
 			var display = null;
 			if(data.categories[0] != null ) {
-				display = data.categories[0].name;
-                submitImg(data.categories[0].name);
+				var category = data.categories[0].name;
+				submitImg(data.categories[0].name);
+				var display = category;
+
+				list.forEach((scavenge_item) => {
+					if (category == scavenge_item.id) {
+						display = scavenge_item.name;
+					}
+				})
 			}
 			else {
 				display = "no objects found";
 			}
+			$("#myText").val(display);
         })
 
         .fail(function(jqXHR, textStatus, errorThrown) {
@@ -65,7 +76,7 @@ function processImage() {
 
 function getList(){
     function populateList(data){
-        var list = JSON.parse(data);
+		list = JSON.parse(data);
         var tableBody = document.getElementById("tableBody");
         for(var i = 0 ; i < list.length; i++){
             var tr = document.createElement("tr");
@@ -98,7 +109,7 @@ var xhr = new XMLHttpRequest();
                 getList();
             }
     };
-    xhr.send();    
+    xhr.send();
 }
 
 
