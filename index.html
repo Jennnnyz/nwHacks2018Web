@@ -46,11 +46,12 @@
 				<input type="text" name="imgInput" id="imgInput">
 				<input type="button" onclick="processImage()" value="Submit" class="myButton">
 			</form>
-		    <div class="card-image">
-				<h5>Result</h5>
+		    <div id="result" class="card-image" style="display:none;">
+				<h5 id="card-title">Result</h5>
 				<img id="myImage" src=""/>
 				<p>This image is classified as:</p>
 				<textarea readonly id="myText"></textarea>
+				<!-- <label id="myText"></label> -->
 			</div>
 		 </div>
 	</body>
