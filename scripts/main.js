@@ -78,6 +78,7 @@ function getList(){
     function populateList(data){
 		list = JSON.parse(data);
         var tableBody = document.getElementById("tableBody");
+        tableBody.innerHTML = "";
         for(var i = 0 ; i < list.length; i++){
             var tr = document.createElement("tr");
             var td = document.createElement("td");
