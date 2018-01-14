@@ -24,8 +24,7 @@ function processImage() {
         };
 
         // Display the image.
-        var sourceImageUrl = document.getElementById("inputImage").value;
-        document.querySelector("#sourceImage").src = sourceImageUrl;
+        var sourceImageUrl = document.getElementById("myImage").src;
 
         // Perform the REST API call.
         $.ajax({
@@ -45,7 +44,7 @@ function processImage() {
 
         .done(function(data) {
             // Show formatted JSON on webpage.
-            $("#responseTextArea").val(JSON.stringify(data, null, 2));
+            $("#myText").val(JSON.stringify(data, null, 2));
         })
 
         .fail(function(jqXHR, textStatus, errorThrown) {
