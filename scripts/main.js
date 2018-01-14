@@ -44,7 +44,14 @@ function processImage() {
 
         .done(function(data) {
             // Show formatted JSON on webpage.
-            $("#myText").val(JSON.stringify(data, null, 2));
+			var display = null;
+			if(data.categories[0] != null ) {
+				display = data.categories[0].name;
+			}
+			else {
+				display = "no objects found";
+			}
+            $("#myText").val(display);
         })
 
         .fail(function(jqXHR, textStatus, errorThrown) {
