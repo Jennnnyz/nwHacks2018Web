@@ -86,7 +86,8 @@ function getList(){
             var tr = document.createElement("tr");
             var td = document.createElement("td");
             if(found.indexOf(list[i].id) > -1){
-             var txt = document.createTextNode(list[i].name + " - Found!");               
+             var txt = document.createTextNode(list[i].name + " - Found!"); 
+             td.setAttribute("style","color:red");              
             }else{
               var txt = document.createTextNode(list[i].name);                              
             }
