@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- <<<<<<< HEAD -->
 	<head>
 		<meta charset="UTF-8">
 		<title>html site</title>
@@ -10,7 +11,6 @@
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	</head>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="scripts/azure.js"></script>
 	<script src="scripts/main.js"></script>
 
 	  <!-- Compiled and minified CSS -->
@@ -22,12 +22,32 @@
 	<body>
 		<div class="row">
 			<h1 id="title">scavengyo</h1>
-			<h5>Please input your image link below:</h5>
+			<p id="desc">Complete the scavenger hunt by finding the images below.</p>
+			<div class="itemList">
+				<!-- <h5>Items to find:</h5> -->
+				<table id = "categoryTable">
+					<thead>
+					  <tr>
+						  <th>Scavenger list</th>
+					  </tr>
+					</thead>
+					<tbody>
+					  <tr>
+						<td id="item0"></td>
+					  </tr>
+					  <tr>
+						<td id="item1"></td>
+					  </tr>
+					</tbody>
+				</table>
+			</div>
+			<p>Please paste your image link below:</p>
 			<form id="form" action="">
 				<input type="text" name="imgInput" id="imgInput">
 				<input type="button" onclick="processImage()" value="Submit" class="myButton">
 			</form>
 		    <div class="card-image">
+				<h5>Result</h5>
 				<img id="myImage" src=""/>
 				<p>This image is classified as:</p>
 				<textarea readonly id="myText"></textarea>
