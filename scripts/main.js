@@ -51,6 +51,7 @@ function processImage() {
 			var display = null;
 			if(data.categories[0] != null ) {
 				var category = data.categories[0].name;
+				submitImg(data.categories[0].name);
 				var display = category;
 
 				list.forEach((scavenge_item) => {
@@ -62,7 +63,7 @@ function processImage() {
 			else {
 				display = "no objects found";
 			}
-            $("#myText").val(display);
+			$("#myText").val(display);
         })
 
         .fail(function(jqXHR, textStatus, errorThrown) {
@@ -75,11 +76,19 @@ function processImage() {
 
 function getList(){
     function populateList(data){
-        list = JSON.parse(data);
+		list = JSON.parse(data);
+        var tableBody = document.getElementById("tableBody");
         for(var i = 0 ; i < list.length; i++){
-            document.getElementById("item" + i).innerHTML = list[i].name;
+            var tr = document.createElement("tr");
+            var td = document.createElement("td");
+            var txt = document.createTextNode(list[i].name);
+
+            td.appendChild(txt);
+            tr.appendChild(td);
+            tableBody.appendChild(tr);
         }
     }
+
 var xhr = new XMLHttpRequest();
     xhr.open("GET","https://2018nwhacks.azurewebsites.net/games/0/items");
 
@@ -91,22 +100,17 @@ var xhr = new XMLHttpRequest();
     xhr.send();
 }
 
-function submitImg(category){
-    function populateList(data){
-        var list = JSON.parse(data);
-        for(var i = 0 ; i < list.length; i++){
-            document.getElementById("item" + i).innerHTML = list[i].name;
-        }
-    }
-var xhr = new XMLHttpRequest();
-    xhr.open("GET","https://2018nwhacks.azurewebsites.net/games/0/items");
+function submitImg(itemname){
 
+var xhr = new XMLHttpRequest();
+    xhr.open("GET","https://2018nwhacks.azurewebsites.net/games/0/remove/"+itemname);
     xhr.onload = function() {
             if(this.status === 200){
-                populateList(xhr.responseText);
+                getList();
             }
     };
     xhr.send();
 }
+
 
 getList();
