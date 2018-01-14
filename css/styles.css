@@ -1,0 +1,65 @@
+img {
+    width: 50%;
+    margin: auto;
+    margin-top: 0px;
+    margin-bottom: 24px;
+}
+
+body {
+    padding-left: 25rem;
+    padding-right: 25rem;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+}
+
+/* td {
+    margin-left: 16px;
+} */
+
+/* tbody {
+    margin-top: 8px;
+    margin-bottom: 8px;
+} */
+
+.itemList {
+    margin-bottom: 72px;
+    background-color: #f9f9f9;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.myButton {
+    padding: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    background: #27AE60;
+    color: white;
+    border: none;
+    border-radius: 16px;
+}
+
+p {
+    font-size: 16px;
+}
+
+#desc {
+    margin-bottom: 24px;
+}
+
+#title {
+    margin-bottom: 64px;
+}
+
+h1, h5, th, p {
+    color: #4F4F4F;
+}
+
+.card-image {
+    padding: 24px;
+    margin-top: 64px;
+    -webkit-box-shadow: 0px 0px 57px -8px rgba(204,204,204,1);
+    -moz-box-shadow: 0px 0px 57px -8px rgba(204,204,204,1);
+    box-shadow: 0px 0px 57px -8px rgba(204,204,204,1);
+}
